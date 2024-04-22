@@ -3,11 +3,12 @@ CFLAGS = -g -Wall -Wextra
 TARGET = deque
 BONUS = bonus
 
-default: TARGET
+default: BONUS
 
 
 # Bonus
 BONUS: main_bonus.o
+	$(RM) $(BONUS)
 	$(CC) $(CFLAGS) -o $(BONUS) main_bonus.o
 	$(RM) *.o
 
