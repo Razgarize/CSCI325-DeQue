@@ -19,6 +19,11 @@ int main() {
      d.push_element_back(201);
      d.push_element_back(202);
      d.push_element_front(199);
+     d.push_element_front(198);
+     d.push_element_front(197);
+     d.push_element_front(196);
+     d.printBlockMap();
+     d.push_element_front(195);
      cout << "Test" << endl;
      d.printBlockMap();
     // cout << "Front: ";

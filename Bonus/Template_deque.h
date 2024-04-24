@@ -118,16 +118,20 @@ void Deque<DequeT>::push_element_back(DequeT value)
 template <typename DequeT>
 void Deque<DequeT>::NewBlockFront()
 {
-    if (blockmap == nullptr) // If the map is empty
+  if (blockmap == nullptr) // If the map is empty
     {
-        blockmap = new DequeT *[capacity]; // Create a new map of pointers to the blocks
+      blockmap = new DequeT *[capacity]; // Create a new map of pointers to the blocks
     }
-    if (MapSize >= capacity) // If the map is full
+  if (MapSize >= capacity) // If the map is full
     {
-        MapResize(); // Resize the map to double the capacity
+      MapResize(); // Resize the map to double the capacity
     }
-    blockmap[MapSize] = new DequeT[BLOCK_SIZE]; // Create a new block of size BLOCK_SIZE
-    MapSize++;                                  // Increment the MapSize of the map
+  else
+    {
+      MapResize();
+      blockmap[0] = new DequeT[BLOCK_SIZE]; //adds a new block to the start of the map.
+    }
+  MapSize++; // Increment the MapSize of the map
 }
 
 template <typename DequeT>
@@ -157,7 +161,7 @@ void Deque<DequeT>::MapResize()
     DequeT **temp = new DequeT *[capacity * 2]; // Create a new map of pointers to the blocks
     for (int i = 0; i < MapSize; i++)
     {
-        temp[i] = blockmap[i]; // Copy the pointers from the old map to the new map
+        temp[i + 1] = blockmap[i]; // Copy the pointers from the old map to the new map
     }
     delete[] blockmap; // Delete the old map
     blockmap = temp;   // Set the old map to the new map
