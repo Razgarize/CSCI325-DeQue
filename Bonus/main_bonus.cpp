@@ -5,7 +5,15 @@
 using namespace std;
 
 int main() {
-  int menu; 
+  int menu;
+  string input;
+  //incase these are needed
+  int option1 = 0;
+  float option2 = 0;
+  doubles option3 = 0;
+  char option4 = 0;
+  //======================
+  
   cout<<"==========DEQUE-TESTING=========="<<endl;
   cout<<"Welcome to the Testing Terminal! Type in the number to the respective test you wish to run:"<<endl;
 while (menu != 15){
@@ -35,7 +43,7 @@ while (menu != 15){
       cin.clear();
       cin.ignore(10000, '\n');
       menu = 0;
-      cout << "Please enter valid options. Numerical numbers only!" << endl;
+      cout << "Please enter valid options. Numerical characters only!" << endl;
     }
 
   if (menu == 1){
@@ -47,35 +55,195 @@ while (menu != 15){
   }
   if (menu == 2){
     //pushes 100 values to the front
-    cout<<"2"<<endl;
+    cout<<"Please select a data type(int, float, double, char): "<<endl;
+    cin>>input;
+
+    if (input == "int"){
+      for (i = 0; i < 100; i++){
+	
+      }
+    }
+    else if (input == "float"){
+      for (i = 0; i < 100; i++){
+	
+      }
+    }
+    else if (input == "double"){
+      for (i = 0.1; i < 10; i++){
+	
+      }
+    }
+    else if (input == "char"){
+      
+    }
   }
   if (menu == 3){
     //pushes 1000 values to the front
-    cout<<"3"<<endl;
+cout<<"Please select a data type(int, float,double,char):"<<endl; 
+cin>>input;
+
+ if (input == "int"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "float"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "double"){
+   for (i = 0.1; i < 10; i++){
+
+   }
+ }
+ else if (input == "char"){
+   
+ }
   }
   if (menu == 4){
     //pushes 100 values to the back
-    cout<<"4"<<endl;
+cout<<"Please select a data type(int, float,double,char):"<<endl; 
+cin>>input;
+
+ if (input == "int"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "float"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "double"){
+   for (i = 0.1; i < 10; i++){
+
+   }
+ }
+ else if (input == "char"){
+   
+ }   
   }
   if (menu == 5){
     //pushes 1000 values to the back
-    cout<<"5"<<endl;
+cout<<"Please select a data type(int, float,double,char):"<<endl; 
+cin>>input;
+
+ if (input == "int"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "float"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "double"){
+   for (i = 0.1; i < 10; i++){
+
+   }
+ }
+else if (input == "char"){
+
+}  
   }
   if (menu == 6){
     //pops 100 values from the front
-    cout<<"6"<<endl;
+cout<<"Please select a data type(int, float,double,char):"<<endl; 
+cin>>input;
+
+ if (input == "int"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "float"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "double"){
+   for (i = 0.1; i < 10; i++){
+
+   }
+ }
+ else if (input == "char"){
+   
+ }   
   }
   if (menu == 7){
     //pops 1000 values from the front
-    cout<<"7"<<endl;
+cout<<"Please select a data type(int, float,double,char):"<<endl; 
+cin>>input;
+
+ if (input == "int"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "float"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "double"){
+   for (i = 0.1; i < 10; i++){
+
+   }
+ }
+ else if (input == "char"){
+   
+ }
   }
   if (menu == 8){
     //pops 100 values from the back
-    cout<<"8"<<endl;
+cout<<"Please select a data type(int, float,double,char):"<<endl; 
+cin>>input;
+
+ if (input == "int"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "float"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "double"){
+   for (i = 0.1; i < 10; i++){
+
+   }
+ }
+else if (input == "char"){
+
+ }
   }
   if (menu == 9){
     //pops 1000 values from the back
-    cout<<"9"<<endl;
+cout<<"Please select a data type(int, float,double,char):"<<endl; 
+cin>>input;
+
+ if (input == "int"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "float"){
+   for (i = 0; i < 100; i++){
+
+   }
+ }
+ else if (input == "double"){
+   for (i = 0.1; i < 10; i++){
+
+   }
+ }
+ else if (input == "char"){
+   
+ }
   }
   if (menu == 10){
     //Random Access test
@@ -98,7 +266,7 @@ while (menu != 15){
     cout<<"14"<<endl; 
   }
   else if (menu <= 0 or menu > 15) {
-    cout<<">Invalid Option, Please try again!\n"<<endl;
+    cout<<"Invalid Option, Please try again!\n"<<endl;
   }
   
  }
