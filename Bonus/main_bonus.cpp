@@ -4,81 +4,103 @@
 
 using namespace std;
 
-template <typename DequeT>
-void Test(DequeT &d);
-
-template <typename DequeT>
-void Test2(DequeT &d);
-
-template <typename DequeT>
-void TestString(DequeT &d);
-
 int main() {
-  Deque<int> d;
-  Test2(d);
-  //Deque<char> t;
-  //Test2(t);
-  //TestString(t);
-  // cout << "Front: ";
-  // d.get_front();
-  cout << "Hello, World!" << endl;
-  return 0;
-}
-
-
-
-
-template <typename DequeT>
-void Test2(DequeT &d)
-{
-  for(int i = 33; i < 126; i++)
+  int menu; 
+  cout<<"==========DEQUE-TESTING=========="<<endl;
+  cout<<"Welcome to the Testing Terminal! Type in the number to the respective test you wish to run:"<<endl;
+while (menu != 15){
+  cout<<"========================================"<<endl;
+  cout<<"1 To check if the Deque is empty"<<endl;
+  cout<<"2 To Push 100 values to the front"<<endl;
+  cout<<"3 To Push 1000 values to the front"<<endl;
+  cout<<"4 To Push 100 values to the back"<<endl;
+  cout<<"5 To Push 1000 values to the back"<<endl;
+  cout<<"6 To Pop 100 values from the front"<<endl;
+  cout<<"7 To Pop 1000 values from the front"<<endl;
+  cout<<"8 To Pop 100 values from the back"<<endl;
+  cout<<"9 To Pop 1000 values from the back"<<endl; 
+  cout<<"10 To Access a Random Item in the Deque"<<endl;
+  cout<<"11 To See the Size/Capacity of The Deque"<<endl;
+  cout<<"12 To Print the Contents of The Deque"<<endl;
+  cout<<"13 To See the First item in the Deque"<<endl;
+  cout<<"14 To see the Last item in the Deque"<<endl; 
+  cout<<"15 To exit the program"<<endl;
+  cout<<"========================================"<<endl;
+  
+  cout << "Please enter your selection: ";
+  cin>>menu;
+  cout<<"========================================"<<endl;
+  if(cin.fail()) //Logic Guard, protects the user from enter non-numerical values.
     {
-      // cout << "Capacity: " << d.get_capacity() << endl;
-      // cout << "Element: " << i << " " << endl;
-      d.push_element_front(i);
+      cin.clear();
+      cin.ignore(10000, '\n');
+      menu = 0;
+      cout << "Please enter valid options. Numerical numbers only!" << endl;
     }
-  //d.printBlockMap();
-  // for(int i = 0; i < 1; i++)
-  // {
-  //     // cout << "Capacity: " << d.get_capacity() << endl;
-  //     // cout << "Element: " << i << " " << endl;
-  //     d.push_element_back(i);
-  // }
-  d.print();
-  cout << endl;
-  cout << "Random Access: " << d[2] << endl;
-}
 
-
-
-template <typename DequeT>
-void Test(DequeT &d)
-{
-  std::cout << "Test" << std::endl;
-  //  for(int i = 0; i < 199; i++)
-  // {
-  //     cout << "Capacity: " << d.get_capacity() << endl;
-  //     cout << i << " " << endl;
-  //     d.push_element_front(i);
-  // }
-  cout << "Map Size: " << d.get_MapSize() << endl;
-  cout << "Map Capacity: " << d.get_capacity() << endl;
-  d.push_element_front(200);
-  d.printBlockMap();
-  cout << "Test" << endl;
-  d.push_element_back(201);
-  d.push_element_back(202);
-  d.push_element_front(199);
-  d.push_element_front(198);
-  d.push_element_front(197);
-  d.push_element_front(196);
-  d.printBlockMap();
-  d.push_element_front(195);
-  d.push_element_back(203);
-  d.push_element_back(204);
-  d.push_element_back(205);
-  d.push_element_back(206);
-  d.push_element_front(240);
-  cout << "Test" << endl;
-  d.printBlockMap();
+  if (menu == 1){
+    if (d.empty() == true){
+      cout<<"The Deque is empty!"<<endl;
+    }
+    else if (d.empty() == false){
+      cout<<"The Deque is not empty!"<<endl;
+  }
+  if (menu == 2){
+    //pushes 100 values to the front
+    cout<<"2"<<endl;
+  }
+  if (menu == 3){
+    //pushes 1000 values to the front
+    cout<<"3"<<endl;
+  }
+  if (menu == 4){
+    //pushes 100 values to the back
+    cout<<"4"<<endl;
+  }
+  if (menu == 5){
+    //pushes 1000 values to the back
+    cout<<"5"<<endl;
+  }
+  if (menu == 6){
+    //pops 100 values from the front
+    cout<<"6"<<endl;
+  }
+  if (menu == 7){
+    //pops 1000 values from the front
+    cout<<"7"<<endl;
+  }
+  if (menu == 8){
+    //pops 100 values from the back
+    cout<<"8"<<endl;
+  }
+  if (menu == 9){
+    //pops 1000 values from the back
+    cout<<"9"<<endl;
+  }
+  if (menu == 10){
+    //Random Access test
+    cout<<"10"<<endl;
+  }
+  if (menu == 11){
+    //Get the size and capacity of the deque on display
+    cout<<"11"<<endl;
+  }
+  if (menu == 12){
+    //print
+    cout<<"12"<<endl;
+  }
+  if (menu == 13){
+    //the first item
+    cout<<"13"<<endl;
+  }
+  if (menu == 14){
+    //the last item
+    cout<<"14"<<endl; 
+  }
+  else if (menu <= 0 or menu > 15) {
+    cout<<">Invalid Option, Please try again!\n"<<endl;
+  }
+  
+ }
+ return 0;
 }
