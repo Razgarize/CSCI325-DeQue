@@ -284,25 +284,25 @@ int main() {
   for (int i = 0; i < 100; i++){
     Dint[i] = Num;
     Num += Num;
-    cout<<"Output Dint["<<i<<"]: "<<Dint[i];
+    cout<<"Output Dint["<<i<<"]: "<<Dint[i]<<endl;
   }
   cout<<"========================================"<<endl;
   for (int i = 0; i < 100; i++){
       Dfloat[i] = FourDec;
       FourDec += FourDec;
-      cout<<"Output Dfloat["<<i<<"]: "<<Dfloat[i];
+      cout<<"Output Dfloat["<<i<<"]: "<<Dfloat[i]<<endl;
     }
   cout<<"========================================"<<endl;
   for (int i = 0; i < 100; i++){
     Ddouble[i] = EightDec;
     EightDec += EightDec;
-    cout<<"Output Ddouble["<<i<<"]: "<<Ddouble[i];
+    cout<<"Output Ddouble["<<i<<"]: "<<Ddouble[i]<<endl;
   }
   cout<<"========================================"<<endl;
   for (int i = 0; i < 93; i++){
     Dchar[i] = Symbol;
     Symbol += 1;
-    cout<<"Output Dchar["<<i<<"]: "<<Dchar[i];
+    cout<<"Output Dchar["<<i<<"]: "<<Dchar[i]<<endl;
   }
   cout<<"========================================"<<endl;
   cout<<"Checking the first item in The Deque:"<<endl;
