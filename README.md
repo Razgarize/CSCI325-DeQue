@@ -120,6 +120,29 @@ The reason for the move is to keep the Random Access simple. It is 
 
 For any new block that is inserted, we will insert a zero (0) into the entire new array.
 
+# How To Use:
+1. Clone the repository to your local machine. Open a terminal and run the following command:
+
+```bash
+git clone https://github.com/Razgarize/CSCI325-DeQue.git
+```
+
+2. Navigate to the project directory
+
+```bash
+cd CSCI325-DeQue
+```
+
+3. Compile the program using the provided Makefile:
+```bash
+make
+```
+
+4. Run the program (Should be just automatic test)
+```bash
+./bonus
+```
+
 
 # Work Divison 
 Due to another round of schedule conflicts on either side and foundation-level bugs resulting in multiple drawing boards being cleared, James was the primary one implementing the meat and bones of the project - meanwhile, Seth handled the driver formatting and getting everything ready for user interaction.   
