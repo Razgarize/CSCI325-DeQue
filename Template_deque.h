@@ -109,21 +109,21 @@ public:
  * void get_front() : prints the front element of the blockmap using the FrontPtr
  *
  * @pre Must have Elements already inserted
- * @return void 
- * @post The FrontPtr gets de-refereneced and printed to the terminal.
+ * @return DequeT The value of the FrontPtr 
+ * @post The FrontPtr gets de-refereneced and gets returned.
  * 
  */
-  void get_front(); 
+  DequeT get_front(); 
 
 /**
- * void get_back() : prints the tail element of the blockmap using the RearPtr
+ * DequeT get_back() : returns the tail element of the blockmap using the RearPtr
  *
  * @pre Must have Elements already inserted.
- * @return void 
- * @post The RearPtr gets de-refereneced and printed to the terminal.
+ * @return DequeT The value of the RearPtr 
+ * @post The RearPtr gets de-refereneced and gets returned.
  * 
  */
-  void get_back(); 
+  DequeT get_back(); 
 
 /**
  * bool empty() : Checks if the deque is empty or not by using the Blockelementcounter as a way of checking
@@ -156,15 +156,15 @@ public:
   int get_MapSize(); 
 
 /**
- * DequeT &operator[](DequeT index) : Returns the address of an element in the Deque
- *
- * @param DequeT index : The index which the user wants to retrieve from the Deque
+ * DequeT &operator[](int index) : Returns the address of an element in the Deque
+ * 
+ * @param int index : The index which the user wants to retrieve from the Deque
  * @pre The mapblock must have blocks/arrays already initialized.
  * @return DequeT : The address of the element in the mapblock
  * @post The address of the element has been returned.
  * 
  */
-  DequeT &operator[](DequeT index);
+  DequeT& operator[](int index);
 
 /**
  * void NewBlockFront() : Moves the blocks in the map to the right, (Resizes if needed) and inserts a new block at the start of the map.
@@ -260,16 +260,15 @@ Deque<DequeT>::~Deque() // Destructor
 
 
 template <typename DequeT>
-void Deque<DequeT>::get_back() 
+DequeT Deque<DequeT>::get_back() 
 {
-  if(BlockElementCounter > 0)
+  if(BlockElementCounter < 0)
     {
-      std::cout << "Back: " << *RearPtr << std::endl;
+      std::cout << "GET BACK ERROR: There are no elements in the blockmap!" << std::endl;
+      return 0;
     }
-  else
-    {
-      std::cout << "GET ERROR: There are no elements in the blockmap!" << std::endl;
-    }
+
+    return *RearPtr;
 }
 
 template <typename DequeT>
@@ -284,7 +283,6 @@ void Deque<DequeT>::pop_back()
     {
       for(int i = 0; i < BLOCK_SIZE; i++)
 	{
-	  std::cout << "for loop: Pop Back: " << i << std::endl;
 	  if(RearPtr == &blockmap[MapSize - 1][0]) // If the RearPtr is at the end of the block (Our ultimate end goal).
 	    {
 	      //Once we get to the end of the block, we will delete the block and move the RearPtr to the last element of the now last block.
@@ -305,14 +303,14 @@ void Deque<DequeT>::pop_back()
 }
 
 template <typename DequeT>
-void Deque<DequeT>::get_front()
+DequeT Deque<DequeT>::get_front()
 {
   if(BlockElementCounter == 0)
     {
       std::cout << "GET FRONT ERROR: There are no elements in the DeQue!" << std::endl;
-      return;
+      return 0;
     }
-  std::cout << "Front: " << *FrontPtr << std::endl;
+  return *FrontPtr;
 }
 
 
@@ -321,24 +319,29 @@ void Deque<DequeT>::pop_front()
 {
   for(int i = 0; i < BLOCK_SIZE; i++)
     {
-      std::cout << "for loop: Pop Front: " << i << std::endl;
       if(FrontPtr == &blockmap[0][BLOCK_SIZE - 1]) // If the FrontPtr is at the beginning of the block (Our ultimate end goal).
-	{
-	  //Once we get to the beginning of the block, we will delete the block and move the FrontPtr to the first element of the now first block.
-	  delete[] blockmap[0]; // Delete the block
-	  MapSize--; // Decrement the MapSize
-	  FrontPtr = &blockmap[0][0]; // Set the FrontPtr to the first element in the new block
-	  BlockElementCounter--; // Decrement the number of elements in the blocks
-	  return; // Exit the function and end the loop
-	}
+    {
+      //Once we get to the beginning of the block, we will delete the block and move the FrontPtr to the first element of the now first block.
+      delete[] blockmap[0]; // Delete the block
+      MapSize--; // Decrement the MapSize
+      DequeT **temp = new DequeT *[capacity]; // Create a new map to move the pointers to the right
+      for (int i = 0; i < MapSize; i++)
+        {
+          temp[i] = blockmap[i + 1]; // Copy the pointers from the old map to the new map
+        }
+      delete[] blockmap; // Delete the old map
+      blockmap = temp; // Assign the new map to blockmap
+      FrontPtr = &blockmap[0][0]; // Set the FrontPtr to the first element in the new block
+      BlockElementCounter--; // Decrement the number of elements in the blocks
+      return; // Exit the function and end the loop
+    }
       else
-	{
-	  FrontPtr++; // Move the FrontPtr to the right
-	  BlockElementCounter--; // Decrement the number of elements in the blocks
-	}
+    {
+      FrontPtr++; // Move the FrontPtr to the right
+      BlockElementCounter--; // Decrement the number of elements in the blocks
+    }
     }
 }
-
 
 template <typename DequeT>
 bool Deque<DequeT>::empty()
@@ -460,9 +463,9 @@ void Deque<DequeT>::MapResize()
 
 
 
-//TODO: Implement the get_back() function
+
 template <typename DequeT>
-DequeT &Deque<DequeT>::operator[](DequeT index) // Overloaded operator[] to access elements in the deque
+DequeT &Deque<DequeT>::operator[](int index) // Overloaded operator[] to access elements in the deque
 {
   if (index < 0 or index >= BlockElementCounter) // If the index is out of bounds
     {
@@ -473,6 +476,7 @@ DequeT &Deque<DequeT>::operator[](DequeT index) // Overloaded operator[] to acce
   int blockIndex = index % BLOCK_SIZE; // Calculate the index in the block
   return blockmap[block][blockIndex]; // Return the element at the index
 }
+
 
 template <typename DequeT>
 void Deque<DequeT>::printBlockMap()
