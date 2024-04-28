@@ -4,13 +4,13 @@ This program takes a templated Deque Toolkit and runs it through a n
 
 # Implementation
 
-- Our approach was to use the program to create a Deque system that worked similarly to a 2D array. For this iteration of the project, we used pointers to track the head and tail of the elements. 
-- We tried multiple times to create using regular math to calculate to starting position of the first element, but we were having multiple issues regarding access and pushing and popping. So we used pointers instead as a pointer athematic is easier. 
+- Our approach was to use the program to create a Deque system that worked similarly to a 2D array. For this iteration of the project, we used pointers to track the head and tail of the elements. 
+- We tried multiple times to create using regular math to calculate to starting position of the first element, but we were having multiple issues regarding access and pushing and popping. So we used pointers instead as a pointer athematic is easier. 
 
 So how we insert items is by using two pointers: 
 
-- FrontPtr - Used to track which is the first element and insert new elements to the front by moving once over to the left.
-- RearPtr  - Used to track which is the last element and insert new elements to the back by moving once over to the right.
+- FrontPtr - Used to track which is the first element and insert new elements to the front by moving once over to the left.
+- RearPtr  - Used to track which is the last element and insert new elements to the back by moving once over to the right.
 
 An example would be inserting number/value 9 to the back:
 
@@ -121,8 +121,22 @@ The reason for the move is to keep the Random Access simple. It is 
 For any new block that is inserted, we will insert a zero (0) into the entire new array.
 
 # How To Use:
-1. Clone the repository to your local machine. Open a terminal and run the following command:
+### WARNING
+The output of this test is incredibly large! It is recommended that you increase your terminal size for optimal viewing. Follow these steps if neccesary:
+``` For CMD on Windows:```
 
+1. Open CMD
+2. Right-click on the title bar
+3. Select 'Properties'
+4. In the 'Options' tab, under 'Command History', increase the 'Buffer Size' value
+
+``` For Linux Terminal:```
+
+Open Terminal
+1. Go to 'Edit' -> 'Profile Preferences'
+2. In the 'Scrolling' tab, check 'Unlimited' under 'Scrollback'
+1. Clone the repository to your local machine. Open a terminal and run the following command:
+## How to use cont.
 ```bash
 git clone https://github.com/Razgarize/CSCI325-DeQue.git
 ```
