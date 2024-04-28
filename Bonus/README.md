@@ -120,6 +120,23 @@ The reason for the move is to keep the Random Access simple. It is 
 
 For any new block that is inserted, we will insert a zero (0) into the entire new array.
 
+# WARNING
+The output of this test is incredibly large! It is recommended that you increase your terminal size for\
+ optimal viewing. Follow these steps if neccesary:
+ ``` For CMD on Windows:```
+
+1. Open CMD
+2. Right-click on the title bar
+3. Select 'Properties'
+4. In the 'Options' tab, under 'Command History', increase the 'Buffer Size' value
+
+``` For Linux Terminal:```
+
+Open Terminal
+1. Go to 'Edit' -> 'Profile Preferences'
+2. In the 'Scrolling' tab, check 'Unlimited' under 'Scrollback'
+
+
 # How To Use:
 1. Clone the repository to your local machine. Open a terminal and run the following command:
 
@@ -142,20 +159,6 @@ make
 ```bash
 ./bonus
 ```
-# WARNING
-The output of this test is incredibly large! It is recommended that you increase your terminal size for optimal viewing. Follow these steps if neccesary:
-``` For CMD on Windows:```
-
-1. Open CMD
-2. Right-click on the title bar
-3. Select 'Properties'
-4. In the 'Options' tab, under 'Command History', increase the 'Buffer Size' value
-
-``` For Linux Terminal:```
-
-Open Terminal
-1. Go to 'Edit' -> 'Profile Preferences'
-2. In the 'Scrolling' tab, check 'Unlimited' under 'Scrollback'
 
 # Work Divison 
 Due to another round of schedule conflicts on either side and foundation-level bugs resulting in multiple drawing boards being cleared, James was the primary one implementing the meat and bones of the project - meanwhile, Seth handled the driver formatting and getting everything ready for user interaction.   
