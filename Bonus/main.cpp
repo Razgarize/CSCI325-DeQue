@@ -283,7 +283,7 @@ int main() {
   cout<<"Testing Integer Random Accesss"<<endl;
   for (int i = 0; i < 100; i++){
     Dint[i] = Num;
-    Num += Num;
+    Num + 2;
     cout<<"Output Dint["<<i<<"]: "<<Dint[i]<<endl;
   }
   cout<<"========================================"<<endl;
