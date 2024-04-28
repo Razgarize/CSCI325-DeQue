@@ -145,16 +145,16 @@ int main() {
   }
   cout<<"========================================"<<endl;
   cout<<"Popping half of the contents from the front"<<endl; 
-  for (int i = 0; i < Dint.get_MapSize/2; i++){
+  for (int i = 0; i < Dint.get_MapSize()/2; i++){
     Dint.pop_front();
   }
-  for (int i = 0; i < Dfloat.get_MapSize/2; i++){
+  for (int i = 0; i < Dfloat.get_MapSize()/2; i++){
     Dfloat.pop_front();
   }
-  for (int i = 0; i < Ddouble.get_MapSize/2; i++){
+  for (int i = 0; i < Ddouble.get_MapSize()/2; i++){
     Ddouble.pop_front();
   }
-  for (int i = 0; i < Dchar.get_MapSize/2; i++){
+  for (int i = 0; i < Dchar.get_MapSize()/2; i++){
     Dchar.pop_front();
   }
   cout<<"Printing the new deque:"<<endl; 
@@ -177,16 +177,16 @@ int main() {
   cout<<"========================================"<<endl;
   cout<<"Resetting deque"<<endl;
   //removes the other half of the deque
-  for (int i = 0; i < Dint.get_MapSize/2; i++){
+  for (int i = 0; i < Dint.get_MapSize()/2; i++){
     Dint.pop_front();
   }
-  for (int i = 0; i < Dfloat.get_MapSize/2; i++){
+  for (int i = 0; i < Dfloat.get_MapSize()/2; i++){
     Dfloat.pop_front();
   }
-  for (int i = 0; i < Ddouble.get_MapSize/2; i++){
+  for (int i = 0; i < Ddouble.get_MapSize()/2; i++){
     Ddouble.pop_front();
   }
-  for (int i = 0; i < Dchar.get_MapSize/2; i++){
+  for (int i = 0; i < Dchar.get_MapSize()/2; i++){
     Dchar.pop_front();
   }
   cout<<"1000 pushes to the back..."<<endl;
@@ -221,16 +221,16 @@ int main() {
   cout<<endl;
   cout<<"========================================"<<endl;
   cout<<"Popping half the contents from the back..."<<endl;
-  for (int i = 0; i < Dint.get_MapSize/2; i++){
+  for (int i = 0; i < Dint.get_MapSize()/2; i++){
     Dint.pop_back();
   }
-  for (int i = 0; i < Dfloat.get_MapSize/2; i++){
+  for (int i = 0; i < Dfloat.get_MapSize()/2; i++){
     Dfloat.pop_back();
   }
-  for (int i = 0; i < Ddouble.get_MapSize/2; i++){
+  for (int i = 0; i < Ddouble.get_MapSize()/2; i++){
     Ddouble.pop_back();
   }
-  for (int i = 0; i < Dchar.get_MapSize/2; i++){
+  for (int i = 0; i < Dchar.get_MapSize()/2; i++){
     Dchar.pop_back();
   }
   cout<<"Printing the new deque:"<<endl;
@@ -253,16 +253,16 @@ int main() {
   cout<<"========================================"<<endl;
   cout<<"Resetting Deque..."<<endl;
   //cleans the deque up
-  for (int i = 0; i < Dint.get_MapSize/2; i++){
+  for (int i = 0; i < Dint.get_MapSize()/2; i++){
     Dint.pop_back();
   }
-  for (int i = 0; i < Dfloat.get_MapSize/2; i++){
+  for (int i = 0; i < Dfloat.get_MapSize()/2; i++){
     Dfloat.pop_back();
   }
-  for (int i = 0; i < Ddouble.get_MapSize/2; i++){
+  for (int i = 0; i < Ddouble.get_MapSize()/2; i++){
     Ddouble.pop_back();
   }
-  for (int i = 0; i < Dchar.get_MapSize/2; i++){
+  for (int i = 0; i < Dchar.get_MapSize()/2; i++){
     Dchar.pop_back();
   }
   cout<<"Regenerating deques..."<<endl;
@@ -300,7 +300,6 @@ int main() {
   }
   cout<<"========================================"<<endl;
   for (int i = 0; i < 93; i++){
-    cout<<"Placing "<<Symbol<<" into position "<<i<<endl;
     Dchar[i] = Symbol;
     Symbol += 1;
     cout<<"Output Dchar["<<i<<"]: "<<Dchar[i];
@@ -312,7 +311,7 @@ int main() {
   cout<<"Float:"<<endl;
   Dfloat.get_front();
   cout<<"Double:"<<endl;
-  Ddouble.get_front;
+  Ddouble.get_front();
   cout<<"Character:"<<endl;
   Dchar.get_front();
   cout<<"========================================"<<endl;
@@ -322,7 +321,7 @@ int main() {
   cout<<"Float:"<<endl;
   Dfloat.get_back();
   cout<<"Double:"<<endl;
-  Ddouble.get_back;
+  Ddouble.get_back();
   cout<<"Character:"<<endl;
   Dchar.get_back();
   return 0;
