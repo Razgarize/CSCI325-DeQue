@@ -300,7 +300,6 @@ bool Deque<DequeT>::empty()
     }
   else
     {
-      std::cout << "blockmap is not empty" << std::endl;
       return false;
     }
 }
@@ -495,7 +494,7 @@ void Deque<DequeT>::print()
     {
       std::cout << "PRINT ERROR: There are no inserted elements in the DeQue!" << std::endl;
       return;
-    }
+    } 
   for (int i = 0; i < MapSize; i++)
     {
       //std::cout << "Blockmap[" << i << "] = " << &blockmap[i] << " | and the values are: ";
