@@ -74,13 +74,13 @@ int main() {
   for(int i = 0; i < 1000; i++){
     Dint.push_element_front(i);
     }
-  for(int i = 0; i < 10; i+= 0.01){
+  for(float i = 0; i < 10; i+= 0.01){
     Dfloat.push_element_front(i);
       }
-  for(int i = 0.001; i < 1; i+= 0.001){
+  for(double i = 0.001; i < 1; i+= 0.001){
     Ddouble.push_element_front(i);
       }
-  for(int i = 33; i < 127; i++){
+  for(char i = 33; i < 127; i++){
     Dchar.push_element_front(i);
       }
   cout<<"========================================"<<endl;
@@ -193,13 +193,13 @@ int main() {
   for(int i = 0; i < 1000; i++){
     Dint.push_element_back(i);
       }
-  for(int i = 0; i < 10; i+= 0.01){
+  for(float i = 0; i < 10; i+= 0.01){
     Dfloat.push_element_back(i);
       }
-  for(int i = 0.001; i < 1; i+= 0.001){
+  for(double i = 0.001; i < 1; i+= 0.001){
     Ddouble.push_element_back(i);
       }
-  for(int i = 33; i < 127; i++){
+  for(char i = 33; i < 127; i++){
     Dchar.push_element_back(i);
       }
   cout<<"Printing the new deque:"<<endl;
