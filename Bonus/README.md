@@ -1,6 +1,6 @@
 # Deque Toolkit 
 
-This program takes a templated Deque Toolkit and runs it through a number of stress tests that the user may select from. With a total of 15 different scenarios ready to run at the push of a button, this should be sufficient in demonstrating the capabilities of the Deque programming. 
+This program takes a templated Deque Toolkit and runs it through a number of stress tests automatically for the user to see. It is completely out of the user's hands beyond first initiating the program. From there, all they can do is wait.
 
 # Implementation
 
