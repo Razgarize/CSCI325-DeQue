@@ -1,8 +1,8 @@
-# Deque Toolkit 
+# Deque Toolkit 
 
 This program takes a templated Deque Toolkit and runs it through a number of stress tests that the user may select from. With a total of 15 different scenarios ready to run at the push of a button, this should be sufficient in demonstrating the capabilities of the Deque programming. 
 
-# Implementation
+# Implementation
 
 - Our approach was to use the program to create a Deque system that worked similarly to a 2D array. For this iteration of the project, we used pointers to track the head and tail of the elements. 
 - We tried multiple times to create using regular math to calculate to starting position of the first element, but we were having multiple issues regarding access and pushing and popping. So we used pointers instead as a pointer athematic is easier. 
@@ -148,9 +148,11 @@ make
 Due to another round of schedule conflicts on either side and foundation-level bugs resulting in multiple drawing boards being cleared, James was the primary one implementing the meat and bones of the project - meanwhile, Seth handled the driver formatting and getting everything ready for user interaction.   
 
 # Files
-- Tempate_Deque.h
-- main_bonus.cpp
-- Makefile
+- Tempate_Deque.h : This includes the class definition and implementation.
+- main_bonus.cpp : This is the test file
+- Makefile : This allows easy compiling. 
+- README.md : Readme file
+- Old Tries : This has most of the attempts we have done. Proof that we worked on this for a while with not a lot of resutls. 
 
 # Multiple attempts
 We tried multiple times to complete this project with multiple ideas, including from lectures. We tried for days to create the mathematical version of the implementation, with complete failure. This has led us to the the pointers Implementation.
