@@ -1,0 +1,13 @@
+#include <iostream>
+#include "Template_Deque.h"
+
+
+using namespace std;
+
+int main()
+{
+  Deque <int>T;
+
+
+  return 0;
+}
