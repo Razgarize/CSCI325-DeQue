@@ -152,7 +152,7 @@ Due to another round of schedule conflicts on either side and foundat
 - main_bonus.cpp : This is the test file
 - Makefile : This allows easy compiling. 
 - README.md : Readme file
-- Old Tries : This has most of the attempts we have done. Proof that we worked on this for a while with not a lot of resutls. 
+- Old Tries : This has most of the attempts we have done. Proof that we worked on this for a while with not a lot of resutls. This can be easily ignored, but we did absolutely tried our best.
 
 # Multiple attempts
 We tried multiple times to complete this project with multiple ideas, including from lectures. We tried for days to create the mathematical version of the implementation, with complete failure. This has led us to the the pointers Implementation.
