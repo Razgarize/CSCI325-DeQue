@@ -21,7 +21,7 @@ int main() {
   float FourDec = 0.2;
 
   Deque<double> Ddouble;
-  double EightDex = 0.00005;
+  double EightDec = 0.00005;
 
   Deque<char> Dchar;
   char Symbol = 33;
