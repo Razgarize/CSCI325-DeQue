@@ -9,9 +9,11 @@
 
 #include <iostream>
 #include <string>
+#include <fstream> 
 #include "Template_deque.h"
 
 using namespace std;
+ofstream out("results.txt"):
 
 int main() {
   Deque<int> Dint;
@@ -26,306 +28,307 @@ int main() {
   Deque<char> Dchar;
   char Symbol = 33;
 
-  cout<<"==============Deque-Testing=============="<<endl;
-  cout<<"Deque empty check 1: "<<endl;
-  cout<<"int: ";
+  out<<"==============Deque-Testing=============="<<endl;
+  out<<"Deque empty check 1: "<<endl;
+  out<<"int: ";
   if (Dint.empty() == true){
-    cout<<"This Deque is empty"<<endl;
+    out<<"This Deque is empty"<<endl;
   }
   else if (Dfloat.empty() == false){
-    cout<<"This Deque is not empty"<<endl;
+    out<<"This Deque is not empty"<<endl;
   }
   cout<<"float: ";
   if (Dfloat.empty() == true){
-    cout<<"This Deque is empty"<<endl;
+    out<<"This Deque is empty"<<endl;
   }
   else if (Dfloat.empty() == false){
-    cout<<"This Deque is not empty"<<endl;
+    out<<"This Deque is not empty"<<endl;
   }
-  cout<<"double: ";
+  out<<"double: ";
   if (Ddouble.empty() == true){
-    cout<<"This Deque is empty"<<endl;
+    out<<"This Deque is empty"<<endl;
   }
   else if (Ddouble.empty() == false){
-    cout<<"This Deque is not empty"<<endl;
+    out<<"This Deque is not empty"<<endl;
   }
-  cout<<"char: ";
+  out<<"char: ";
   if (Dchar.empty() == true){
-    cout<<"This Deque is empty"<<endl;
+    out<<"This Deque is empty"<<endl;
   }
   else if (Dchar.empty() == false){
-    cout<<"This Deque is not empty"<<endl;
+    out<<"This Deque is not empty"<<endl;
   }
-  cout<<"========================================"<<endl;
-  cout<<"Checking Deque Capacity and Block Total:"<<endl;
-  cout<<"Integer Capacity: "<<Dint.get_capacity()<<endl;
-  cout<<"Integer Block Amount: "<<Dint.get_MapSize()<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Float Capacity: "<<Dfloat.get_capacity()<<endl;
-  cout<<"Float Block Amount: "<<Dfloat.get_MapSize()<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Double Capacity: "<<Ddouble.get_capacity()<<endl;
-  cout<<"Double Block Amount: "<<Ddouble.get_MapSize()<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Character Capacity: "<<Dchar.get_capacity()<<endl;
-  cout<<"Character Block Amount: "<<Dchar.get_MapSize()<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"1000 pushes to the front"<<endl;
+  out<<"========================================"<<endl;
+  out<<"Checking Deque Capacity and Block Total:"<<endl;
+  out<<"Integer Capacity: "<<Dint.get_capacity()<<endl;
+  out<<"Integer Block Amount: "<<Dint.get_MapSize()<<endl;
+  out<<"========================================"<<endl;
+  out<<"Float Capacity: "<<Dfloat.get_capacity()<<endl;
+  out<<"Float Block Amount: "<<Dfloat.get_MapSize()<<endl;
+  out<<"========================================"<<endl;
+  out<<"Double Capacity: "<<Ddouble.get_capacity()<<endl;
+  out<<"Double Block Amount: "<<Ddouble.get_MapSize()<<endl;
+  out<<"========================================"<<endl;
+  out<<"Character Capacity: "<<Dchar.get_capacity()<<endl;
+  out<<"Character Block Amount: "<<Dchar.get_MapSize()<<endl;
+  out<<"========================================"<<endl;
+  out<<"1000 pushes to the front"<<endl;
   for(int i = 0; i < 1000; i++){
-    Dint.push_element_front(i);
+    out<< Dint.push_element_front(i);
     }
   for(float i = 0; i < 10; i+= 0.01){
-    Dfloat.push_element_front(i);
+    out<<Dfloat.push_element_front(i);
       }
   for(double i = 0.001; i < 1; i+= 0.001){
-    Ddouble.push_element_front(i);
+    out<<Ddouble.push_element_front(i);
       }
   for(char i = 33; i < 127; i++){
-    Dchar.push_element_front(i);
+    out<<Dchar.push_element_front(i);
       }
-  cout<<"========================================"<<endl;
-  cout<<"Integer deque: "<<endl;
-  Dint.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Float deque: "<<endl;
-  Dfloat.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Double deque: "<<endl;
-  Ddouble.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Character deque: "<<endl;
-  Dchar.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
+  out<<"========================================"<<endl;
+  out<<"Integer deque: "<<endl;
+  cout<<Dint.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Float deque: "<<endl;
+  out<<Dfloat.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Double deque: "<<endl;
+  out<<Ddouble.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Character deque: "<<endl;
+  out<<Dchar.print();
+  out<<endl;
+  out<<"========================================"<<endl;
   //second capacity/block check
-  cout<<"Checking Deque Capacity and Block Total:"<<endl;
-  cout<<"Integer Capacity: "<<Dint.get_capacity()<<endl;
-  cout<<"Integer Block Amount: "<<Dint.get_MapSize()<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Float Capacity: "<<Dfloat.get_capacity()<<endl;
-  cout<<"Float Block Amount: "<<Dfloat.get_MapSize()<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Double Capacity: "<<Ddouble.get_capacity()<<endl;
-  cout<<"Double Block Amount: "<<Ddouble.get_MapSize()<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Character Capacity: "<<Dchar.get_capacity()<<endl;
-  cout<<"Character Block Amount: "<<Dchar.get_MapSize()<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Deque empty check 2: "<<endl;
-  cout<<"int: ";
+  out<<"Checking Deque Capacity and Block Total:"<<endl;
+  out<<"Integer Capacity: "<<Dint.get_capacity()<<endl;
+  out<<"Integer Block Amount: "<<Dint.get_MapSize()<<endl;
+  out<<"========================================"<<endl;
+  out<<"Float Capacity: "<<Dfloat.get_capacity()<<endl;
+  out<<"Float Block Amount: "<<Dfloat.get_MapSize()<<endl;
+  out<<"========================================"<<endl;
+  out<<"Double Capacity: "<<Ddouble.get_capacity()<<endl;
+  out<<"Double Block Amount: "<<Ddouble.get_MapSize()<<endl;
+  out<<"========================================"<<endl;
+  out<<"Character Capacity: "<<Dchar.get_capacity()<<endl;
+  out<<"Character Block Amount: "<<Dchar.get_MapSize()<<endl;
+  out<<"========================================"<<endl;
+  out<<"Deque empty check 2: "<<endl;
+  out<<"int: ";
   if (Dint.empty() == true){
-    cout<<"This Deque is empty"<<endl;
+    out<<"This Deque is empty"<<endl;
   }
   else if (Dfloat.empty() == false){
-    cout<<"This Deque is not empty"<<endl;
+    out<<"This Deque is not empty"<<endl;
   }
-  cout<<"float: ";
+  out<<"float: ";
   if (Dfloat.empty() == true){
-    cout<<"This Deque is empty"<<endl;
+    out<<"This Deque is empty"<<endl;
   }
   else if (Dfloat.empty() == false){
-    cout<<"This Deque is not empty"<<endl;
+    out<<"This Deque is not empty"<<endl;
   }
-  cout<<"double: ";
+  out<<"double: ";
   if (Ddouble.empty() == true){
-    cout<<"This Deque is empty"<<endl;
+    out<<"This Deque is empty"<<endl;
   }
   else if (Ddouble.empty() == false){
-    cout<<"This Deque is not empty"<<endl;
+    out<<"This Deque is not empty"<<endl;
   }
-  cout<<"char: ";
+  out<<"char: ";
   if (Dchar.empty() == true){
-    cout<<"This Deque is empty"<<endl;
+    out<<"This Deque is empty"<<endl;
   }
   else if (Dchar.empty() == false){
-    cout<<"This Deque is not empty"<<endl;
+    out<<"This Deque is not empty"<<endl;
   }
-  cout<<"========================================"<<endl;
-  cout<<"Popping half of the contents from the front"<<endl; 
+  out<<"========================================"<<endl;
+  out<<"Popping half of the contents from the front"<<endl; 
   for (int i = 0; i < Dint.get_MapSize()/2; i++){
-    Dint.pop_front();
+    out<<Dint.pop_front();
   }
   for (int i = 0; i < Dfloat.get_MapSize()/2; i++){
-    Dfloat.pop_front();
+    out<<Dfloat.pop_front();
   }
   for (int i = 0; i < Ddouble.get_MapSize()/2; i++){
-    Ddouble.pop_front();
+    out<<Ddouble.pop_front();
   }
   for (int i = 0; i < Dchar.get_MapSize()/2; i++){
-    Dchar.pop_front();
+    out<<Dchar.pop_front();
   }
-  cout<<"Printing the new deque:"<<endl; 
-  cout<<"========================================"<<endl;
-  cout<<"Integar deque: "<<endl;
-  Dint.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Float deque: "<<endl;
-  Dfloat.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Double deque: "<<endl;
-  Ddouble.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Character deque: "<<endl;
-  Dchar.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Resetting deque"<<endl;
+  out<<"Printing the new deque:"<<endl; 
+  out<<"========================================"<<endl;
+  out<<"Integar deque: "<<endl;
+  out<<Dint.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Float deque: "<<endl;
+  out<<Dfloat.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Double deque: "<<endl;
+  out<<Ddouble.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Character deque: "<<endl;
+  out<<Dchar.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Resetting deque"<<endl;
   //removes the other half of the deque
   for (int i = 0; i < Dint.get_MapSize()/2; i++){
-    Dint.pop_front();
+    out<<Dint.pop_front();
   }
   for (int i = 0; i < Dfloat.get_MapSize()/2; i++){
-    Dfloat.pop_front();
+    out<<Dfloat.pop_front();
   }
   for (int i = 0; i < Ddouble.get_MapSize()/2; i++){
-    Ddouble.pop_front();
+    out<<Ddouble.pop_front();
   }
   for (int i = 0; i < Dchar.get_MapSize()/2; i++){
-    Dchar.pop_front();
+    out<<Dchar.pop_front();
   }
-  cout<<"1000 pushes to the back..."<<endl;
+  out<<"1000 pushes to the back..."<<endl;
   for(int i = 0; i < 1000; i++){
-    Dint.push_element_back(i);
+    out<<Dint.push_element_back(i);
       }
   for(float i = 0; i < 10; i+= 0.01){
-    Dfloat.push_element_back(i);
+    out<<Dfloat.push_element_back(i);
       }
   for(double i = 0.001; i < 1; i+= 0.001){
-    Ddouble.push_element_back(i);
+    out<<Ddouble.push_element_back(i);
       }
   for(char i = 33; i < 127; i++){
-    Dchar.push_element_back(i);
+    out<<Dchar.push_element_back(i);
       }
-  cout<<"Printing the new deque:"<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Integar deque: "<<endl;
-  Dint.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Float deque: "<<endl;
-  Dfloat.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Double deque: "<<endl;
-  Ddouble.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Character deque: "<<endl;
-  Dchar.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Popping half the contents from the back..."<<endl;
+  out<<"Printing the new deque:"<<endl;
+  out<<"========================================"<<endl;
+  out<<"Integar deque: "<<endl;
+  out<<Dint.print();
+  out<<cout<<endl;
+  out<<"========================================"<<endl;
+  out<<"Float deque: "<<endl;
+  out<<Dfloat.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Double deque: "<<endl;
+  out<<Ddouble.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Character deque: "<<endl;
+  out<<Dchar.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Popping half the contents from the back..."<<endl;
   for (int i = 0; i < Dint.get_MapSize()/2; i++){
-    Dint.pop_back();
+    out<< Dint.pop_back();
   }
   for (int i = 0; i < Dfloat.get_MapSize()/2; i++){
-    Dfloat.pop_back();
+    out<<Dfloat.pop_back();
   }
   for (int i = 0; i < Ddouble.get_MapSize()/2; i++){
-    Ddouble.pop_back();
+    out<<Ddouble.pop_back();
   }
   for (int i = 0; i < Dchar.get_MapSize()/2; i++){
-    Dchar.pop_back();
+    out<<Dchar.pop_back();
   }
-  cout<<"Printing the new deque:"<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Integar deque: "<<endl;
-  Dint.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Float deque: "<<endl;
-  Dfloat.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Double deque: "<<endl;
-  Ddouble.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Character deque: "<<endl;
-  Dchar.print();
-  cout<<endl;
-  cout<<"========================================"<<endl;
-  cout<<"Resetting Deque..."<<endl;
+  out<<"Printing the new deque:"<<endl;
+  out<<"========================================"<<endl;
+  out<<"Integar deque: "<<endl;
+  out<<Dint.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Float deque: "<<endl;
+  out<<Dfloat.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Double deque: "<<endl;
+  out<<Ddouble.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Character deque: "<<endl;
+  out<<Dchar.print();
+  out<<endl;
+  out<<"========================================"<<endl;
+  out<<"Resetting Deque..."<<endl;
   //cleans the deque up
   for (int i = 0; i < Dint.get_MapSize()/2; i++){
-    Dint.pop_back();
+    out<< Dint.pop_back();
   }
   for (int i = 0; i < Dfloat.get_MapSize()/2; i++){
-    Dfloat.pop_back();
+    out<< Dfloat.pop_back();
   }
   for (int i = 0; i < Ddouble.get_MapSize()/2; i++){
-    Ddouble.pop_back();
+    out<< Ddouble.pop_back();
   }
   for (int i = 0; i < Dchar.get_MapSize()/2; i++){
-    Dchar.pop_back();
+    out<<Dchar.pop_back();
   }
-  cout<<"Regenerating deques..."<<endl;
+  out<<"Regenerating deques..."<<endl;
   //generates new deque
   for(int i = 0; i < 1000; i++){
-    Dint.push_element_front(i);
+    out<< Dint.push_element_front(i);
       }
   for(float i = 0; i < 10; i+= 0.01){
-    Dfloat.push_element_front(i);
+    out<<Dfloat.push_element_front(i);
       }
   for(double i = 0.001; i < 1; i+= 0.001){
-    Ddouble.push_element_front(i);
+    out<<Ddouble.push_element_front(i);
       }
   for(char i = 33; i < 127; i++){
-    Dchar.push_element_front(i);
+    out<<Dchar.push_element_front(i);
       }
-  cout<<"========================================"<<endl;
-  cout<<"Testing Integer Random Accesss"<<endl;
+  out<<"========================================"<<endl;
+  out<<"Testing Integer Random Accesss"<<endl;
   for (int i = 0; i < 100; i++){
-    Dint[i] = Num;
+    out<<  Dint[i] = Num;
     Num + 2;
-    cout<<"Output Dint["<<i<<"]: "<<Dint[i]<<endl;
+    out<<"Output Dint["<<i<<"]: "<<Dint[i]<<endl;
   }
-  cout<<"========================================"<<endl;
+  out<<"========================================"<<endl;
   for (int i = 0; i < 100; i++){
-      Dfloat[i] = FourDec;
+    out<< Dfloat[i] = FourDec;
       FourDec += FourDec;
-      cout<<"Output Dfloat["<<i<<"]: "<<Dfloat[i]<<endl;
+      out<<"Output Dfloat["<<i<<"]: "<<Dfloat[i]<<endl;
     }
-  cout<<"========================================"<<endl;
+  out<<"========================================"<<endl;
   for (int i = 0; i < 100; i++){
-    Ddouble[i] = EightDec;
+    out<< Ddouble[i] = EightDec;
     EightDec += EightDec;
-    cout<<"Output Ddouble["<<i<<"]: "<<Ddouble[i]<<endl;
+    out<<"Output Ddouble["<<i<<"]: "<<Ddouble[i]<<endl;
   }
-  cout<<"========================================"<<endl;
+  out<<"========================================"<<endl;
   for (int i = 0; i < 93; i++){
-    Dchar[i] = Symbol;
+    out<< Dchar[i] = Symbol;
     Symbol += 1;
-    cout<<"Output Dchar["<<i<<"]: "<<Dchar[i]<<endl;
+    out<<"Output Dchar["<<i<<"]: "<<Dchar[i]<<endl;
   }
-  cout<<"========================================"<<endl;
-  cout<<"Checking the first item in The Deque:"<<endl;
-  cout<<"Integer:"<<endl;
-  Dint.get_front();
+  out<<"========================================"<<endl;
+  out<<"Checking the first item in The Deque:"<<endl;
+  out<<"Integer:"<<endl;
+  out<<Dint.get_front();
+  out<<"Float:"<<endl;
+  out<<Dfloat.get_front();
+  out<<"Double:"<<endl;
+  out<<Ddouble.get_front();
+  out<<"Character:"<<endl;
+  out<<Dchar.get_front();
+  out<<"========================================"<<endl;
+  out<<"Checking the last item in The Deque:"<<endl;
+  out<<"Integer:"<<endl;
+  out<<Dint.get_back();
   cout<<"Float:"<<endl;
-  Dfloat.get_front();
-  cout<<"Double:"<<endl;
-  Ddouble.get_front();
-  cout<<"Character:"<<endl;
-  Dchar.get_front();
-  cout<<"========================================"<<endl;
-  cout<<"Checking the last item in The Deque:"<<endl;
-  cout<<"Integer:"<<endl;
-  Dint.get_back();
-  cout<<"Float:"<<endl;
-  Dfloat.get_back();
-  cout<<"Double:"<<endl;
-  Ddouble.get_back();
-  cout<<"Character:"<<endl;
-  Dchar.get_back();
-  cout<<"========================================"<<endl;
-  cout<<"Deque tests concluded"<<endl;
+  out<<Dfloat.get_back();
+  out<<"Double:"<<endl;
+  out<<Ddouble.get_back();
+  out<<"Character:"<<endl;
+  out<<Dchar.get_back();
+  out<<"========================================"<<endl;
+  out<<"Deque tests concluded"<<endl;
 
+  cout<<"If you are seeing this, results.txt should be created and now readable! the test results are there" 
   return 0
 }
