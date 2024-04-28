@@ -306,7 +306,7 @@ int main() {
   }
   cout<<"========================================"<<endl;
   cout<<"Checking the first item in The Deque:"<<endl;
-  cout<<"Integar:"<<endl;
+  cout<<"Integer:"<<endl;
   Dint.get_front();
   cout<<"Float:"<<endl;
   Dfloat.get_front();
@@ -316,7 +316,7 @@ int main() {
   Dchar.get_front();
   cout<<"========================================"<<endl;
   cout<<"Checking the last item in The Deque:"<<endl;
-  cout<<"Integar:"<<endl;
+  cout<<"Integer:"<<endl;
   Dint.get_back();
   cout<<"Float:"<<endl;
   Dfloat.get_back();
