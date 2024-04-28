@@ -32,28 +32,28 @@ int main() {
   if (Dint.empty() == true){
     cout<<"This Deque is empty"<<endl;
   }
-  else if (Dfloat.empty == false){
+  else if (Dfloat.empty() == false){
     cout<<"This Deque is not empty"<<endl;
   }
   cout<<"float: ";
   if (Dfloat.empty() == true){
     cout<<"This Deque is empty"<<endl;
   }
-  else if (Dfloat.empty == false){
+  else if (Dfloat.empty() == false){
     cout<<"This Deque is not empty"<<endl;
   }
   cout<<"double: ";
   if (Ddouble.empty() == true){
     cout<<"This Deque is empty"<<endl;
   }
-  else if (Ddouble.empty == false){
+  else if (Ddouble.empty() == false){
     cout<<"This Deque is not empty"<<endl;
   }
   cout<<"char: ";
   if (Dchar.empty() == true){
     cout<<"This Deque is empty"<<endl;
   }
-  else if (Dchar.empty == false){
+  else if (Dchar.empty() == false){
     cout<<"This Deque is not empty"<<endl;
   }
   cout<<"========================================"<<endl;
@@ -71,16 +71,16 @@ int main() {
   cout<<"Character Block Amount: "<<Dchar.get_MapSize()<<endl;
   cout<<"========================================"<<endl;
   cout<<"1000 pushes to the front"<<endl;
-  for(i = 0; i < 1000; i++){
+  for(int i = 0; i < 1000; i++){
     Dint.push_element_front(i)
     }
-  for(i = 0; i < 10; i+= 0.01){
+  for(int i = 0; i < 10; i+= 0.01){
     Dfloat.push_element_front(i)
       }
-  for(i = 0.001; i < 1; i+= 0.001){
+  for(int i = 0.001; i < 1; i+= 0.001){
     Ddouble.push_element_front(i)
       }
-  for(i = 33; i < 127; i++){
+  for(int i = 33; i < 127; i++){
     Dchar.push_element_front(i)
       }
   cout<<"========================================"<<endl;
@@ -119,21 +119,21 @@ int main() {
   if (Dint.empty() == true){
     cout<<"This Deque is empty"<<endl;
   }
-  else if (Dfloat.empty == false){
+  else if (Dfloat.empty() == false){
     cout<<"This Deque is not empty"<<endl;
   }
   cout<<"float: ";
   if (Dfloat.empty() == true){
     cout<<"This Deque is empty"<<endl;
   }
-  else if (Dfloat.empty == false){
+  else if (Dfloat.empty() == false){
     cout<<"This Deque is not empty"<<endl;
   }
   cout<<"double: ";
   if (Ddouble.empty() == true){
     cout<<"This Deque is empty"<<endl;
   }
-  else if (Ddouble.empty == false){
+  else if (Ddouble.empty() == false){
     cout<<"This Deque is not empty"<<endl;
   }
   cout<<"char: ";
@@ -190,16 +190,16 @@ int main() {
     Dchar.pop_front();
   }
   cout<<"1000 pushes to the back..."<<endl;
-  for(i = 0; i < 1000; i++){
+  for(int i = 0; i < 1000; i++){
     Dint.push_element_back(i)
       }
-  for(i = 0; i < 10; i+= 0.01){
+  for(int i = 0; i < 10; i+= 0.01){
     Dfloat.push_element_back(i)
       }
-  for(i = 0.001; i < 1; i+= 0.001){
+  for(int i = 0.001; i < 1; i+= 0.001){
     Ddouble.push_element_back(i)
       }
-  for(i = 33; i < 127; i++){
+  for(int i = 33; i < 127; i++){
     Dchar.push_element_back(i)
       }
   cout<<"Printing the new deque:"<<endl;
@@ -267,39 +267,39 @@ int main() {
   }
   cout<<"Regenerating deques..."<<endl;
   //generates new deque
-  for(i = 0; i < 1000; i++){
+  for(int i = 0; i < 1000; i++){
     Dint.push_element_front(i)
       }
-  for(i = 0; i < 10; i+= 0.01){
+  for(int i = 0; i < 10; i+= 0.01){
     Dfloat.push_element_front(i)
       }
-  for(i = 0.001; i < 1; i+= 0.001){
+  for(int i = 0.001; i < 1; i+= 0.001){
     Ddouble.push_element_front(i)
       }
-  for(i = 33; i < 127; i++){
+  for(int i = 33; i < 127; i++){
     Dchar.push_element_front(i)
       }
   cout<<"========================================"<<endl;
   cout<<"Testing Integer Random Accesss"<<endl;
-  for (i = 0; i < 100; i++){
+  for (int i = 0; i < 100; i++){
     Dint[i] = Num;
     Num *= Num;
     cout<<"Output Dint["<<i<<"]: "<<Dint[i];
   }
   cout<<"========================================"<<endl;
-  for (i = 0; i < 100; i++){
+  for (int i = 0; i < 100; i++){
       Dfloat[i] = FourDec;
       FourDec += FourDec;
       cout<<"Output Dfloat["<<i<<"]: "<<Dfloat[i];
     }
   cout<<"========================================"<<endl;
-  for (i = 0; i < 100; i++){
+  for (int i = 0; i < 100; i++){
     Ddouble[i] = EightDec;
     EightDec += EightDec;
     cout<<"Output Ddouble["<<i<<"]: "<<Ddouble[i];
   }
   cout<<"========================================"<<endl;
-  for (i = 0; i < 93; i++){
+  for (int i = 0; i < 93; i++){
     cout<<"Placing "<<Symbol<<" into position "<<i<<endl;
     Dchar[i] = Symbol;
     Symbol += 1;
