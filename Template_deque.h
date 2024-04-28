@@ -27,9 +27,9 @@ private:
   DequeT **blockmap;   // Pointer to the map of pointers to the blocks
   DequeT *RearPtr;     // points to the last element in the deque. This allows us to do manipulation of the arrays over the entire blockmap. It will only go from the last half of the blockmap.
   DequeT *FrontPtr;    //points to the last element in the deque. This allows us to do manipulation of the arrays over the entire blockmap. It will only go from the first half of the blockmap.
-  int capacity;
+  int capacity; // The Overall capacity of the blockmap
   int BlockElementCounter; // Counter for the number of elements in all the blocks.
-  int MapSize;
+  int MapSize; // How many blocks are in the mapblock
   const static int BLOCK_SIZE = 5; // Size of each block in the arrays. This is a constant value that will never change for simplicity.
 
 /**
@@ -248,19 +248,19 @@ Deque<DequeT>::Deque() // Constructor
 template <typename DequeT>
 Deque<DequeT>::~Deque() // Destructor
 {
-  for(int i = 0; i < capacity; i++)
+  for(int i = 0; i < capacity; i++) // deletes the pointers in the mapblock
     {
       blockmap[i] = nullptr;
       delete blockmap[i];
     }
-  delete[] blockmap;
+  delete[] blockmap; // deletes the map
   RearPtr = nullptr;
   FrontPtr = nullptr;
 }
 
 
 template <typename DequeT>
-void Deque<DequeT>::get_back()
+void Deque<DequeT>::get_back() 
 {
   if(BlockElementCounter > 0)
     {
@@ -386,7 +386,7 @@ void Deque<DequeT>::NewBlockFront()
     }
   else
     {
-      MapResize();
+      MapResize(); // We want to resize has the first block is already at index 0. 
       blockmap[0] = new DequeT[BLOCK_SIZE]; //adds a new block to the start of the map.
       for(int i = 0; i < BLOCK_SIZE; i++)
         {
@@ -443,29 +443,6 @@ template <typename DequeT>
 int Deque<DequeT>::get_MapSize()
 {
   return MapSize;
-}
-
-template <typename DequeT>
-void Deque<DequeT>::MoveFrontPtrLeft()
-{
-  if (blockmap == nullptr) // If the map is empty
-    {
-      //std::cout << "Blockmap is empty" << std::endl;
-      return;
-    }
-  if (FrontPtr == blockmap[0][0])
-    {
-      //std::cout << "FrontPtr is at the beginning of the block" << std::endl;
-      NewBlockFront();
-      FrontPtr--;
-      return;
-    }
-  else
-    {
-      //std::cout << "FrontPtr is moving left" << std::endl;
-      FrontPtr--;
-      return;
-    }
 }
 
 template <typename DequeT>
