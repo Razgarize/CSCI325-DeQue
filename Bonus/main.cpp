@@ -72,16 +72,16 @@ int main() {
   cout<<"========================================"<<endl;
   cout<<"1000 pushes to the front"<<endl;
   for(int i = 0; i < 1000; i++){
-    Dint.push_element_front(i)
+    Dint.push_element_front(i);
     }
   for(int i = 0; i < 10; i+= 0.01){
-    Dfloat.push_element_front(i)
+    Dfloat.push_element_front(i);
       }
   for(int i = 0.001; i < 1; i+= 0.001){
-    Ddouble.push_element_front(i)
+    Ddouble.push_element_front(i);
       }
   for(int i = 33; i < 127; i++){
-    Dchar.push_element_front(i)
+    Dchar.push_element_front(i);
       }
   cout<<"========================================"<<endl;
   cout<<"Integer deque: "<<endl;
@@ -140,7 +140,7 @@ int main() {
   if (Dchar.empty() == true){
     cout<<"This Deque is empty"<<endl;
   }
-  else if (Dchar.empty == false){
+  else if (Dchar.empty() == false){
     cout<<"This Deque is not empty"<<endl;
   }
   cout<<"========================================"<<endl;
@@ -191,16 +191,16 @@ int main() {
   }
   cout<<"1000 pushes to the back..."<<endl;
   for(int i = 0; i < 1000; i++){
-    Dint.push_element_back(i)
+    Dint.push_element_back(i);
       }
   for(int i = 0; i < 10; i+= 0.01){
-    Dfloat.push_element_back(i)
+    Dfloat.push_element_back(i);
       }
   for(int i = 0.001; i < 1; i+= 0.001){
-    Ddouble.push_element_back(i)
+    Ddouble.push_element_back(i);
       }
   for(int i = 33; i < 127; i++){
-    Dchar.push_element_back(i)
+    Dchar.push_element_back(i);
       }
   cout<<"Printing the new deque:"<<endl;
   cout<<"========================================"<<endl;
@@ -268,16 +268,16 @@ int main() {
   cout<<"Regenerating deques..."<<endl;
   //generates new deque
   for(int i = 0; i < 1000; i++){
-    Dint.push_element_front(i)
+    Dint.push_element_front(i);
       }
   for(int i = 0; i < 10; i+= 0.01){
-    Dfloat.push_element_front(i)
+    Dfloat.push_element_front(i);
       }
   for(int i = 0.001; i < 1; i+= 0.001){
-    Ddouble.push_element_front(i)
+    Ddouble.push_element_front(i);
       }
   for(int i = 33; i < 127; i++){
-    Dchar.push_element_front(i)
+    Dchar.push_element_front(i);
       }
   cout<<"========================================"<<endl;
   cout<<"Testing Integer Random Accesss"<<endl;
