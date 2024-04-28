@@ -324,7 +324,8 @@ int main() {
   Ddouble.get_back();
   cout<<"Character:"<<endl;
   Dchar.get_back();
-  return 0;
   cout<<"========================================"<<endl;
   cout<<"Deque tests concluded"<<endl;
+
+  return 0
 }
