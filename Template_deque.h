@@ -11,8 +11,17 @@
 #define DEQUE_Bonus
 #include <iostream>
 
+
+
+/**
+ * Deque: A double ended que that takes char, int, double and float.
+ *
+ * @class Deque Template_deque.h "CSCI325-DeQue/Template_deque.h"
+ * @brief This has pointers that are able to locate both the front and end of the deque to make it look like a 1-dimentional array.
+ *
+ */
 template <typename DequeT>
-class Deque
+class Deque 
 {
 private:
   DequeT **blockmap;   // Pointer to the map of pointers to the blocks
@@ -145,12 +154,68 @@ public:
  * 
  */
   int get_MapSize(); 
+
+/**
+ * DequeT &operator[](DequeT index) : Returns the address of an element in the Deque
+ *
+ * @param DequeT index : The index which the user wants to retrieve from the Deque
+ * @pre The mapblock must have blocks/arrays already initialized.
+ * @return DequeT : The address of the element in the mapblock
+ * @post The address of the element has been returned.
+ * 
+ */
   DequeT &operator[](DequeT index);
+
+/**
+ * void NewBlockFront() : Moves the blocks in the map to the right, (Resizes if needed) and inserts a new block at the start of the map.
+ *
+ * @pre 
+ * @return void 
+ * @post A new block has been added to the start of the map.
+ * 
+ */
   void NewBlockFront();
+
+/**
+ * NewBlockRear() : Addes a new block to the end of the map, (Resizes if needed) and inserts a block at the after the last block.
+ *
+ * @pre 
+ * @return void 
+ * @post A new block has been added at the end of mapblock
+ * 
+ */
   void NewBlockRear();
+
+/**
+ * print() : Prints the entire Deque
+ *
+ * @pre Needs a mapblock to have blocks of pointers that point to arrays.
+ * @return void 
+ * @post The entire Deque has been printed
+ * 
+ */
   void print();
 
+/**
+ * int get_BlockElementCounter() : Returns the amount of elements in the blocks.
+ *
+ * @pre 
+ * @return int 
+ * @post The amount of elements has been returned
+ * 
+ */
+  int get_BlockElementCounter();
+
   // DEBUGGER SECTION:
+
+/**
+ * void printBlockMap() : This is a debugging tool that prints out the addresses of the blocks and their associated values.
+ *
+ * @pre mapblock must have been initalized
+ * @return void 
+ * @post The entire blockmap has been printed with block addresses
+ * 
+ */
   void printBlockMap();
 };
 
@@ -160,6 +225,12 @@ public:
 
 
 // Implimentation of the templated Deque class
+
+template <typename DequeT>
+int Deque<DequeT>::get_BlockElementCounter()
+{
+  return BlockElementCounter;
+}
 
 template <typename DequeT>
 Deque<DequeT>::Deque() // Constructor
