@@ -217,23 +217,27 @@ cout<<"Please select a data type(int, float,double,char):"<<endl;
 cin>>input;
 
  if (input == "int"){
-   for (int i = 0; i < 100; i++){
-     Dint.pop_front(i); 
+     for (int i = 0; i < Dint.get_MapSize(); i++){
+       if (Dint.get_MapSize() == 0){
+	 cout<<"Map-Size at zero!"<<endl;
+	 break;
+       }
+       elseDint.pop_front(); 
    }
  }
  else if (input == "float"){
-   for (float i = 0; i < 1; i += 0.01){
-     Dfloat.pop_front(i);
+   for (float i = 0; i < Dfloat.get_MapSize(); i++){
+     Dfloat.pop_front();
    }
  }
  else if (input == "double"){
-   for (double i = 0.0001; i < 1; i += 0.0001){
-     Ddouble.pop_front(i);
+   for (double i = 0; i < Ddouble.get_MapSize(); i ++){
+     Ddouble.pop_front();
    }
  }
  else if (input == "char"){
-   for (char i = 33; i < 127; i++){
-     Dchar.pop_front(i);
+   for (char i = 0; i < Dchar.get_MapSize(); i++){
+     Dchar.pop_front();
    }
  }
   }
@@ -244,23 +248,23 @@ cout<<"Please select a data type(int, float,double,char):"<<endl;
 cin>>input;
 
  if (input == "int"){
-   for (int i = 0; i < 100; i++){
-     Dint.pop_front(i);
+   for (int i = 0; i < 1000; i++){
+     Dint.pop_front();
    }
  }
  else if (input == "float"){
    for (float i = 0; i < 1; i += 0.01){
-     Dfloat.pop_front(i);
+     Dfloat.pop_front();
    }
  }
  else if (input == "double"){
    for (double i = 0.0001; i < 1; i += 0.0001){
-     Ddouble.pop_front(i);
+     Ddouble.pop_front();
    }
  }
  else if (input == "char"){
    for (char i = 33; i < 127; i++){
-     Dchar.pop_front(i);
+     Dchar.pop_front();
    }
  }
   }
@@ -273,7 +277,7 @@ cin>>input;
 
  if (input == "int"){
    for (int i = 0; i < 100; i++){
-     Dint.pop_back(i);
+     Dint.pop_back();
    }
  }
  else if (input == "float"){
